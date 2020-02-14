@@ -1,7 +1,8 @@
 from selenium import webdriver
 from time import sleep
 
-from secrets import username, password
+username = 'samoht55@hotmail.fr'
+password = 'facmanOtr2584'
 
 class TinderBot():
     def __init__(self):
@@ -30,11 +31,23 @@ class TinderBot():
 
         self.driver.switch_to_window(base_window)
 
-        popup_1 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
-        popup_1.click()
-
-        popup_2 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
-        popup_2.click()
+#        popup_1 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
+#        popup_1.click()
+#
+#        popup_2 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
+#        popup_2.click()
+        
+        sleep(2)
+        
+        popup_3 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
+        popup_3.click()
+        
+        sleep(2)
+        
+        popup_4 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[2]')
+        popup_4.click()        
+        
+        
 
     def like(self):
         like_btn = self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]')
@@ -65,3 +78,4 @@ class TinderBot():
 
 bot = TinderBot()
 bot.login()
+bot.auto_swipe()
